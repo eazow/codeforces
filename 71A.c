@@ -1,30 +1,23 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+int main(int argc, char **argv)
 {
 	int i=0, length, lines;
 	char word[100] = "";
-	char words[100][100];
-	char new_word[100] = "";
 	scanf("%d", &lines);
-
 	
 	while(i < lines) {
 		scanf("%s", word);
 		length = strlen(word);
 		if(length > 10) {
-			sprintf(words[i], "%c%d%c", word[0],length-2, word[length-1]);
+			printf("%c%d%c\n", word[0],length-2, word[length-1]);
 		}
 		else {
-			strcpy(words[i], word);
+			printf("%s\n", word);
 		}
 		i++;
 	}
 
-	i = 0;
-	while(i < lines) {
-		printf("%s\n", words[i]);
-		i++;
-	}
+	return 0;
 }
